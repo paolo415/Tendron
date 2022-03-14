@@ -21,7 +21,18 @@ class Tendril
   {
     int startX=myX;
     int startY=myY;
+    int thick=13;
+    int r=255;
+    int g=100;
+    int b=100;
     for (int i=0; i<myNumSegments; i++) {
+      stroke(r,g,b);
+      strokeWeight(thick);
+      if(thick>1){
+      thick=thick-1;}
+      r=r-15;
+      b=b-15;
+      g=g-15;
       myAngle=myAngle+(Math.random()*0.4)-0.2;
       int endX=(int)(startX+Math.cos(myAngle)*SEG_LENGTH);
       int endY=(int)(startY+Math.sin(myAngle)*SEG_LENGTH);
